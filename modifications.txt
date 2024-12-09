@@ -1,0 +1,20 @@
+This file details the changes made to run UniAD and reproduce the results shown in our paper.
+Install instructions are almost identical to those shown in the ReadMe file, however this repo should be used in place of the original repo.
+Additionally, when installing CUDA in your conda environment, it should be done with the following:
+conda install -c omgarcia gcc-6
+conda install -c conda-forge cudatoolkit=11.1
+conda install -c conda-forge mamba
+mamba install -c conda-forge cudatoolkit-dev=11.1
+
+All other installation instructions should be the same. 
+
+Note: Results were gathered from the mini-nuScenes dataset, so when preparing the dataset, the mini set should be used.
+Additionally, all evaluation was done on a single GPU.
+
+The model evaulation can be run similar to how it is done in the README, but quantitative evaulation is done through modified scripts.
+In the directory: /UniAD/tools/analysis_tools/visualize
+run2.py & run3.py can be utilized to calculate a generalized 2D & 3D IoU, which is not done by the original run.py script.
+
+Additionally, an avg.py script exists in the main directory to average BEV IoU results that are originally produced by the detection network. This can be run after
+running the detection network and changing the respective test folder location. Finally, a remaining bev_imager.py file exists to produce an alternative BEV plot for each
+camera instance.
