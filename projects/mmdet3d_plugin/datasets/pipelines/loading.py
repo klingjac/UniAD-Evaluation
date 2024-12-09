@@ -45,7 +45,7 @@ class LoadMultiViewImageFromFilesInCeph(object):
         images_multiView = []
         filename = results['img_filename']
         for img_path in filename:
-            img_path = os.path.join(self.img_root, img_path)
+            #img_path = os.path.join(self.img_root, img_path)
             if self.file_client_args['backend'] == 'petrel':
                 img_bytes = self.file_client.get(img_path)
                 img = mmcv.imfrombytes(img_bytes)

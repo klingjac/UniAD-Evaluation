@@ -102,7 +102,7 @@ class AgentPredictionData:
         self.pred_label = pred_label
         self.pred_center = pred_center
         self.pred_dim = pred_dim
-        self.pred_yaw = -pred_yaw-np.pi/2
+        self.pred_yaw = pred_yaw#-pred_yaw-np.pi/2
         self.pred_vel = pred_vel
         self.pred_traj = pred_traj
         self.pred_traj_score = pred_traj_score
